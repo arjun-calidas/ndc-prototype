@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "2be1c525-df24-4439-9cf5-67da48df4255",
+		"name": "NDC-Prototype",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19362170"
+	},
+	"item": [
+		{
+			"name": "AirShoppingRQ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<AirShoppingRQ xmlns=\"http://www.iata.org/IATA/EDIST\"\r\n               Version=\"17.2\"\r\n               PartyID=\"TESTAGENT\">\r\n  <Document>\r\n    <Name>DemoShop</Name>\r\n    <ReferenceVersion>1</ReferenceVersion>\r\n  </Document>\r\n  <Travelers>\r\n    <Traveler>\r\n      <AnonymousTraveler>\r\n        <PTC>ADT</PTC>\r\n      </AnonymousTraveler>\r\n    </Traveler>\r\n  </Travelers>\r\n  <CoreQuery>\r\n    <OriginDestinations>\r\n      <OriginDestination>\r\n        <Departure>\r\n          <AirportCode>LHR</AirportCode>\r\n          <Date>2025-09-01</Date>\r\n        </Departure>\r\n        <Arrival>\r\n          <AirportCode>JFK</AirportCode>\r\n        </Arrival>\r\n      </OriginDestination>\r\n    </OriginDestinations>\r\n  </CoreQuery>\r\n  <Preferences>\r\n    <CabinPreferences>\r\n      <CabinType>Economy</CabinType>\r\n    </CabinPreferences>\r\n  </Preferences>\r\n</AirShoppingRQ>\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webhook.site/bb8ea728-5431-4f46-8114-14c554a64996",
+					"protocol": "https",
+					"host": [
+						"webhook",
+						"site"
+					],
+					"path": [
+						"bb8ea728-5431-4f46-8114-14c554a64996"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OfferPriceRQ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<OfferPriceRQ xmlns=\"http://www.iata.org/IATA/EDIST\"\r\n              Version=\"17.2\"\r\n              PartyID=\"TESTAGENT\">\r\n  <Document>\r\n    <Name>PriceTest</Name>\r\n    <ReferenceVersion>1</ReferenceVersion>\r\n  </Document>\r\n  <Query>\r\n    <OfferID Owner=\"AA\">XYZ-123</OfferID>\r\n    <PaxReferences>\r\n      <PaxReference>\r\n        <TravelerID>1</TravelerID>\r\n      </PaxReference>\r\n    </PaxReferences>\r\n  </Query>\r\n</OfferPriceRQ>\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webhook.site/bb8ea728-5431-4f46-8114-14c554a64996",
+					"protocol": "https",
+					"host": [
+						"webhook",
+						"site"
+					],
+					"path": [
+						"bb8ea728-5431-4f46-8114-14c554a64996"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrderCreateRQ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<OrderCreateRQ xmlns=\"http://www.iata.org/IATA/EDIST\"\r\n               Version=\"17.2\"\r\n               PartyID=\"TESTAGENT\">\r\n  <Document>\r\n    <Name>OrderTest</Name>\r\n    <ReferenceVersion>1</ReferenceVersion>\r\n  </Document>\r\n  <Query>\r\n    <Passengers>\r\n      <Passenger>\r\n        <PassengerID>1</PassengerID>\r\n        <PersonName>\r\n          <NamePrefix>Mr</NamePrefix>\r\n          <GivenName>John</GivenName>\r\n          <Surname>Doe</Surname>\r\n        </PersonName>\r\n      </Passenger>\r\n    </Passengers>\r\n    <Billing>\r\n      <PaymentForm>\r\n        <CreditCard>\r\n          <CardType>VI</CardType>\r\n          <CardNumber>4111111111111111</CardNumber>\r\n          <ExpiryDate>2025-12</ExpiryDate>\r\n          <CardHolderName>JOHN DOE</CardHolderName>\r\n          <CVV>123</CVV>\r\n        </CreditCard>\r\n      </PaymentForm>\r\n    </Billing>\r\n    <Travelers>\r\n      <Traveler>\r\n        <AnonymousTraveler>\r\n          <PTC>ADT</PTC>\r\n          <PassengerTypeQuantity>1</PassengerTypeQuantity>\r\n        </AnonymousTraveler>\r\n        <ServiceDetails>\r\n          <OfferItemID>AA-ECONOMY-001</OfferItemID>\r\n        </ServiceDetails>\r\n      </Traveler>\r\n    </Travelers>\r\n  </Query>\r\n</OrderCreateRQ>\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webhook.site/bb8ea728-5431-4f46-8114-14c554a64996",
+					"protocol": "https",
+					"host": [
+						"webhook",
+						"site"
+					],
+					"path": [
+						"bb8ea728-5431-4f46-8114-14c554a64996"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
