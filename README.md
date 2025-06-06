@@ -22,5 +22,3 @@ This repository contains a lightweight proof-of-concept showing how to format an
 3. Edit each request’s URL to your Webhook.site URL (paste it where prompted).  
 4. Click **Send** on each request.  
 5. In Webhook.site’s dashboard, you will see the raw XML you sent—verify that it matches the IATA NDC schema elements.
-
-That’s it—no live NDC sandbox or server is required. This proves you know how to build and parameterize NDC XML payloads correctly.
